@@ -4,6 +4,9 @@ The package was created to process the data from manuscript:
 
 __Martianova, E., Pageau, A., Pausik, N., Doucet, T., Leblanc, D, Proulx, C.D.__ _Coherent activity at three major lateral hypothalamic neural outputs controls the onset of motivated behavior responses_
 
+___FiberPhotmetryDataAnalysis.ipynb___ notebook has object and functions necessary to process fiber photometry data.
+
+___LHA-retro_allTests_manuscript.ipynb___ notebook is an example of use of the ___FiberPhotmetryDataAnalysis.ipynb___.
 
 ### Short description
 
