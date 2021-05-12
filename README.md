@@ -12,22 +12,22 @@ Using functions from [___FiberPhotmetryDataAnalysis.ipynb___](./FiberPhotometryD
 
 ```python
 # Create dictionaries with your recordings and events
-signals = {'Aneurons': signal_from_A, 
-           'Bneurons': signal_from_B} # You can add as many recordings as you have from the same animal
+signals = {'Aneurons': signal_from_A, # The keys are names of neuronal populations, values are vectors of intensity.
+           'Bneurons': signal_from_B} # You can add as many recordings as you have from the same animal.
 
-references = {'Aneurons': yourReference_from_A, # The keys have to match the one in the signals
-              'Bneuronas': yourReference_from_B}
+references = {'Aneurons': reference_from_A, # The keys have to match the one in the signals.
+              'Bneurons': reference_from_B}
               
-time_ = yourTimeVector # All your recordings and time arrays have to be the same length
+time_ = yourTimeVector # All your recordings and time vectors have to be the same length.
 
-events = {'event1': yourEvents1, # You can add as many events as you have. Each event is a 2D array,
-          'event2': yourEvents2, # with 2 columns if it has start and end (e.g. consumption, immobility bouts),
-          'event3': event3array} # with 1 column if it has only start (e.g. air puff, foot shock) 
+events = {'event1': event1array, # You can add as many events as you have. Each event is a 2D array,
+          'event2': event2array, # with 2 columns if it has onset and offset (e.g. consumption, immobility bouts),
+          'event3': event3array} # with 1 column if it has only start (e.g. air puff, foot shock).
           
-measurements = {'measure1': 'time': measure1time,
-                          'values': measure1values}
-                'measure2': 'time': measure1time,
-                          'values': measure1values}
+measurements = {'measure1': 'time': measure1time,   # The measurements can be for example speed or freezing score.
+                          'values': measure1values} # The recording time of the measurements can be not the same as fiber photometry
+                'measure2': 'time': measure1time,   # You can add as many measures as you have.
+                          'values': measure1values} 
                           
 # Create FiberPhotometryRecording object
 r = FiberPhotometryRecording(signals,references,time_,events,
@@ -36,11 +36,11 @@ r = FiberPhotometryRecording(signals,references,time_,events,
 # Calculate dF/F for all recordings
 r.getdFF()
 # Get a dF/F trace from one neuronal population
-r.dFFs['AneuronalPopulation']
+r.dFFs['Aneurons']
 
 # Calculate perievent arrays for each neural population and each event
 r.getPerievents()
-# Get perievent array recorded from neurons A at the beginning of event 3
-r.Perievents['Aneurons']['event3']['start']
+# Get perievent array recorded from neurons A at the offset of event 3
+r.Perievents['Aneurons']['event3']['offset']
 ```
 
