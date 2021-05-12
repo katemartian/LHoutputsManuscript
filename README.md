@@ -12,16 +12,17 @@ Using functions from [___FiberPhotmetryDataAnalysis.ipynb___](./FiberPhotometryD
 
 ```python
 # Create dictionaries with your recordings and events
-signals = {'AneuronalPopulation': yourSignal_from_A,
-           'BneuronalPopulation': yourSignal_from_B} # You can add as many recordings as you have from the same animal
+signals = {'Aneurons': signal_from_A, 
+           'Bneurons': signal_from_B} # You can add as many recordings as you have from the same animal
 
-references = {'AneuronalPopulation': yourReference_from_A, # The keys have to match the one in the signals
-              'BneuronalPopulation': yourReference_from_B}
+references = {'Aneurons': yourReference_from_A, # The keys have to match the one in the signals
+              'Bneuronas': yourReference_from_B}
               
 time_ = yourTimeVector # All your recordings and time arrays have to be the same length
 
-events = {'event1': yourEvents1, 
-          'event2': yourEvents2}
+events = {'event1': yourEvents1, # You can add as many events as you have. Each event is a 2D array,
+          'event2': yourEvents2, # with 2 columns if it has start and end (e.g. consumption, immobility bouts),
+          'event3': event3array} # with 1 column if it has only start (e.g. air puff, foot shock) 
           
 measurements = {'measure1': 'time': measure1time,
                           'values': measure1values}
@@ -39,5 +40,7 @@ r.dFFs['AneuronalPopulation']
 
 # Calculate perievent arrays for each neural population and each event
 r.getPerievents()
+# Get perievent array recorded from neurons A at the beginning of event 3
+r.Perievents['Aneurons']['event3']['start']
 ```
 
