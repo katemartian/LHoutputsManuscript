@@ -10,7 +10,7 @@ __Martianova, E., Pageau, A., Pausik, N., Doucet, T., Leblanc, D, Proulx, C.D.__
 ## Processing data
 Using functions from [___FiberPhotmetryDataAnalysis.ipynb___](./FiberPhotometryDataAnalysis.ipynb) you can create _FiberPhotometryRecording_ object with your recordings and with one line of code get dF/F signal:
 
-'''
+```
 # Create dictionaries with your recordings and events
 signals = {'AneuronalPopulation': yourSignal_from_A,
            'BneuronalPopulation': yourSignal_from_B}
@@ -27,4 +27,5 @@ measurements = {'measure1': 'time': measure1time,
 # Create FiberPhotometryRecording object
 r = FiberPhotometryRecording(signals,references,time_,events,
                              measurements,'mouseName','testName','trialNumber')
-'''
+```
+
