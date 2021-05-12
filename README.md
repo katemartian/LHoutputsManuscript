@@ -8,7 +8,7 @@ __Martianova, E., Pageau, A., Pausik, N., Doucet, T., Leblanc, D, Proulx, C.D.__
 # How to use functions
 
 ## Processing data
-Using functions from [___FiberPhotmetryDataAnalysis.ipynb___](./FiberPhotometryDataAnalysis.ipynb) you can create _FiberPhotometryRecording_ object with your recordings and with one line of code get dF/F signal and create perievent arrays:
+Using functions from [___FiberPhotmetryDataAnalysis.ipynb___](./FiberPhotometryDataAnalysis.ipynb), you can create _FiberPhotometryRecording_ object containing your recordings and with one line of code calculate dF/F signal and create perievent arrays:
 
 ```python
 # Create dictionaries with your recordings and events
@@ -42,5 +42,8 @@ r.dFFs['Aneurons']
 r.getPerievents()
 # Get perievent array recorded from neurons A at the offset of event 3
 r.Perievents['Aneurons']['event3']['offset']
+
+# Save data to hdf file
+r.saveRecording('HDFname.h5') # In the same HDF file, you can save several recordings from different mice, tests, and trials
 ```
 
