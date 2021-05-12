@@ -50,14 +50,18 @@ r.saveRecording('HDFname.h5') # In the same HDF file, you can save several recor
 ## Analyzing data
 Using FiberPhotometryTest object, you can calculate average per mouse perievent trace across all trials
 
-```
-# Create FiberPhotometryTe
+```python
+# Create FiberPhotometryTest object
 test = FiberPhotometryTest('HDFname.h5','testName')
 
-# Calculate means
+# Calculate means and area under curve (AUC) at different time frames (default frames are -1s - 0s and 0s - +1s from an event)
 test.getMeans()
 
 # Plot means for neurons A at onset of event 1
 test.plotMeans('neuronsA','event1','onset')
+
+# Get a data frame of AUCs for all neural populations at onset of event 1
+df = getDataFrameAUC('event1','onset',['before','after']) # The last argument sets names to AUC time frames
+# You can use this data frame to do statistical analysis
 ```
 
