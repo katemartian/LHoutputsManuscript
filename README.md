@@ -34,7 +34,7 @@ r = FiberPhotometryRecording(signals,references,time_,events,
                              measurements,'mouseName','testName','trialNumber')
                              
 # Calculate dF/F for all recordings
-r.getdFF()
+r.getDFF()
 # Get a dF/F trace from one neuronal population
 r.dFFs['Aneurons']
 
@@ -45,5 +45,19 @@ r.Perievents['Aneurons']['event3']['offset']
 
 # Save data to hdf file
 r.saveRecording('HDFname.h5') # In the same HDF file, you can save several recordings from different mice, tests, and trials
+```
+
+## Analyzing data
+Using FiberPhotometryTest object, you can calculate average per mouse perievent trace across all trials
+
+```
+# Create FiberPhotometryTe
+test = FiberPhotometryTest('HDFname.h5','testName')
+
+# Calculate means
+test.getMeans()
+
+# Plot means for neurons A at onset of event 1
+test.plotMeans('neuronsA','event1','onset')
 ```
 
