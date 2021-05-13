@@ -103,7 +103,7 @@ test2 = FiberPhotometryTest('HDFname.h5','test2name')
 # Calculate overall Pearson correlation between dF/F traces of A and B neurons.
 test1.getOutputCorrelation('Aneurons','Bneurons')
 test2.getOutputCorrelation('aneurons','Bneurons')
-
+ 
 # Create FiberPhotometryExperiment object
 exp = FiberPhotometryExperiment('HDFname.h5')
 # Plot distribution of R values for neurons A and measure 1 in tests 1 and 2
