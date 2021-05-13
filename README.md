@@ -3,7 +3,7 @@
 This repository includes scripts and source data that were used in the following preprint: 
 __Martianova, E., Pageau, A., Pausik, N., Doucet, T., Leblanc, D, Proulx, C.D.__ [_Coherent activity at three major lateral hypothalamic neural outputs controls the onset of motivated behavior responses._](https://www.biorxiv.org/content/10.1101/2021.04.28.441785v1) bioRxiv, doi: 10.1101/2021.04.28.441785v1, 2021.
 
-[___FiberPhotmetryDataAnalysis.ipynb___](./FiberPhotometryDataAnalysis.ipynb) notebook includes functions necessary to process, analyze, and visualize fiber photometry data. Using these functions, jupyter notebooks in the [rawData](./rawData) folder show all the steps of analysis from raw data to the final [source data](./sourceData) and plots used in the figures of the preprint. [sourceData](./sourceData) folder also includes jupyter notebooks showing stastical analysis done for the preprint.
+[___FiberPhotmetryDataAnalysis.ipynb___](./FiberPhotometryDataAnalysis.ipynb) notebook includes functions necessary to process, analyze, and visualize fiber photometry data. Using these functions, jupyter notebooks in the [rawData](./rawData) folder show all the steps of analysis from raw data to the final [source data](./sourceData) and plots used in the figures of the preprint. The [sourceData](./sourceData) folder also includes jupyter notebooks showing stastical analysis done for the preprint.
 
 # How to use functions
 
@@ -73,6 +73,8 @@ test.plotMeans('neuronsA','event1','onset')
 df = getDataFrameAUC('event1','onset',['before','after']) # The last argument sets names to AUC time frames
 # You can use this data frame to do statistical analysis
 ```
+
+![FPmean](FPmean.png)
 
 You can also do correlation analysis between dF/F signal and measurement or dF/F signals of two neural populations. It can be total correlation across the whole recordings or at specific events. To plot the results across several tests, FiberPhotometryExperiment object can be used.
 
