@@ -106,13 +106,36 @@ test2.getOutputCorrelation('aneurons','Bneurons')
 exp = FiberPhotometryExperiment('HDFname.h5')
 # Plot distribution of R values for neurons A and measure 1 in tests 1 and 2
 exp.plotRoverTests('Aneurons',output1='Bneurons',tests=['test1name','test2name'])
-# Get data frame of R values
+# Get data frame of R values for tests 1 and 2
 df = exp.getDataFrameRoutputs([test1name','test2name'])
 ```
 
-Correlation analysis can be done at recorded events and in between them. For more information check our preprint.
+Correlation analysis can be done at recorded events and in between them. For more information check our [preprint](./2021.04.28.441785v1.full.pdf).
 
 ```python
+# Create FiberPhotometryTest objects corresponding to one of the tests saved in HDF file.
+test1 = FiberPhotometryTest('HDFname.h5','test1name')
+# Calculate perievent correlation between dF/F and measure 1 at event 1 and between them
+test1.getMeasurePerieventCorrelation('event1','measure1')
+
+# Plot a number of positively, negatively, not correlated events
+test1.plotMeasureCorrelationCounts('measure1','Aneurons','event1')
+
+# Create FiberPhotometryExperiment object
+exp = FiberPhotometryExperiment('HDFname.h5')
+# Get data frame of the number of positively, negatively, not correlated events
+df = exp.getDataFrameMeasureCorrCounts('measure1',['test1name','test2name'],['Aneurons','Bneurons'])
 ```
 
+From the results of the previous perievent correlation analysis, you can plot cross correaltion.
 
+```python
+# Plot cross correlation between dF/F and measure 1 traces 
+test1.plotMeasureCrossCorrelation('measure1','Aneurons','event1','offset')
+# Get dataframe of cross correlation at offset of event 1
+df = test1.getDataFrameCrossCorr('measure1','event1','offset')
+```
+
+The same analysis can be done between dF/F traces of two neural populations.
+
+This explanation covers all the functions that were used to analyze data for the preprint.
