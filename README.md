@@ -95,8 +95,6 @@ exp.plotRoverTests('Aneurons',measure='measure1',tests=['test1name','test2name']
 df = exp.getDataFrameRmeasure('measure1',[test1name','test2name'])
 ```
 
-<img src="FPpearson.png" width="50%" height="50%">
-
 The same can be done for correlation between dF/F traces of two neural populations
 
 ```python
@@ -116,6 +114,8 @@ exp.plotRoverTests('Aneurons',output1='Bneurons',tests=['test1name','test2name']
 df = exp.getDataFrameRoutputs([test1name','test2name'])
 ```
 
+<img src="FPpearson.png" width="60%" height="60%">
+
 Correlation analysis can be done at recorded events and in between them. For more information check our [preprint](./2021.04.28.441785v1.full.pdf).
 
 ```python
@@ -133,7 +133,7 @@ exp = FiberPhotometryExperiment('HDFname.h5')
 df = exp.getDataFrameMeasureCorrCounts('measure1',['test1name','test2name'],['Aneurons','Bneurons'])
 ```
 
-<img src="FPperieventCorr.png" width="50%" height="50%">
+<img src="FPperieventCorr.png" width="60%" height="60%">
 
 From the results of the previous perievent correlation analysis, you can plot cross correaltion.
 
@@ -144,7 +144,7 @@ test1.plotMeasureCrossCorrelation('measure1','Aneurons','event1','offset')
 df = test1.getDataFrameCrossCorr('measure1','event1','offset')
 ```
 
-<img src="FPcrossCorr.png" width="50%" height="50%">
+<img src="FPcrossCorr.png" width="60%" height="60%">
 
 The same analysis can be done between dF/F traces of two neural populations.
 
