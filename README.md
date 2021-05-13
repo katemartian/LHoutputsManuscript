@@ -96,7 +96,7 @@ df = exp.getDataFrameRmeasure('measure1',[test1name','test2name'])
 ```
 ![FPpearson](FPpearson.png){:height="50%" width="50%"}
 
-<img src="FPpearson.png" width="100" height="100">
+<img src="FPpearson.png" width="500" height="500">
 
 The same can be done for correlation between dF/F traces of two neural populations
 
