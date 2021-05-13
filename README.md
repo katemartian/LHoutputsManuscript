@@ -47,7 +47,7 @@ r.Perievents['Aneurons']['event3']['offset']
 r.saveRecording('HDFname.h5') # In the same HDF file, you can save several recordings from different mice, tests, and trials
 ```
 
-![FPrecording](FPrecording.png)
+![FPrecording](examplePlots/FPrecording.png)
 
 If you set parameters plot and save to True, the functions create a folder 'figures', which contains plots of the steps of the data processing.
 
@@ -74,7 +74,7 @@ df = getDataFrameAUC('event1','onset',['before','after']) # The last argument se
 # You can use this data frame to do statistical analysis
 ```
 
-![FPmean](FPmean.png)
+![FPmean](examplePlots/FPmean.png)
 
 You can also do correlation analysis between dF/F signal and measurement or dF/F signals of two neural populations. It can be total correlation across the whole recordings or at specific events. To plot the results across several tests, FiberPhotometryExperiment object can be used.
 
@@ -114,7 +114,7 @@ exp.plotRoverTests('Aneurons',output1='Bneurons',tests=['test1name','test2name']
 df = exp.getDataFrameRoutputs([test1name','test2name'])
 ```
 
-<img src="FPpearson.png" width="60%" height="60%">
+<img src="examplePlots/FPpearson.png" width="60%" height="60%">
 
 Correlation analysis can be done at recorded events and in between them. For more information check our [preprint](./2021.04.28.441785v1.full.pdf).
 
@@ -133,7 +133,7 @@ exp = FiberPhotometryExperiment('HDFname.h5')
 df = exp.getDataFrameMeasureCorrCounts('measure1',['test1name','test2name'],['Aneurons','Bneurons'])
 ```
 
-<img src="FPperieventCorr.png" width="60%" height="60%">
+<img src="examplePlots/FPperieventCorr.png" width="60%" height="60%">
 
 From the results of the previous perievent correlation analysis, you can plot cross correaltion.
 
@@ -144,7 +144,7 @@ test1.plotMeasureCrossCorrelation('measure1','Aneurons','event1','offset')
 df = test1.getDataFrameCrossCorr('measure1','event1','offset')
 ```
 
-<img src="FPcrossCorr.png" width="60%" height="60%">
+<img src="examplePlots/FPcrossCorr.png" width="60%" height="60%">
 
 The same analysis can be done between dF/F traces of two neural populations.
 
