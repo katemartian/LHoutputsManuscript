@@ -94,6 +94,9 @@ exp.plotRoverTests('Aneurons',measure='measure1',tests=['test1name','test2name']
 # Get data frame of R values
 df = exp.getDataFrameRmeasure('measure1',[test1name','test2name'])
 ```
+![FPpearson](FPpearson.png)
+
+The same can be done for correlation between dF/F traces of two neural populations
 
 ```python
 # Total coorelation between dF/F traces of two neural populations
@@ -129,6 +132,8 @@ exp = FiberPhotometryExperiment('HDFname.h5')
 df = exp.getDataFrameMeasureCorrCounts('measure1',['test1name','test2name'],['Aneurons','Bneurons'])
 ```
 
+![FPperieventCorr](FPperieventCorr.png)
+
 From the results of the previous perievent correlation analysis, you can plot cross correaltion.
 
 ```python
@@ -137,6 +142,8 @@ test1.plotMeasureCrossCorrelation('measure1','Aneurons','event1','offset')
 # Get dataframe of cross correlation at offset of event 1
 df = test1.getDataFrameCrossCorr('measure1','event1','offset')
 ```
+
+![FPcrossCorr](FPcrossCorr.png)
 
 The same analysis can be done between dF/F traces of two neural populations.
 
