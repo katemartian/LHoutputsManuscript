@@ -94,7 +94,7 @@ exp.plotRoverTests('Aneurons',measure='measure1',tests=['test1name','test2name']
 # Get data frame of R values
 df = exp.getDataFrameRmeasure('measure1',[test1name','test2name'])
 ```
-![FPpearson](FPpearson.png)
+![FPpearson](FPpearson.png){:height="50%" width="50%"}
 
 The same can be done for correlation between dF/F traces of two neural populations
 
