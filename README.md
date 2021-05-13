@@ -1,7 +1,7 @@
 # Coherent activity at three major lateral hypothalamic neural outputs controls the onset of motivated behavior responses
 
 This repository includes scripts and source data that were used in the following preprint: 
-__Martianova, E., Pageau, A., Pausik, N., Doucet, T., Leblanc, D, Proulx, C.D.__ [_Coherent activity at three major lateral hypothalamic neural outputs controls the onset of motivated behavior responses_](https://www.biorxiv.org/content/10.1101/2021.04.28.441785v1)
+__Martianova, E., Pageau, A., Pausik, N., Doucet, T., Leblanc, D, Proulx, C.D.__ [_Coherent activity at three major lateral hypothalamic neural outputs controls the onset of motivated behavior responses._](https://www.biorxiv.org/content/10.1101/2021.04.28.441785v1) bioRxiv, doi: 10.1101/2021.04.28.441785v1, 2021.
 
 [___FiberPhotmetryDataAnalysis.ipynb___](./FiberPhotometryDataAnalysis.ipynb) notebook includes functions necessary to process, analyze, and visualize fiber photometry data. Using these functions, jupyter notebooks in the [rawData](./rawData) folder show all the steps of analysis from raw data to the final [source data](./sourceData) and plots used in the figures of the preprint. [sourceData](./sourceData) folder also includes jupyter notebooks showing stastical analysis done for the preprint.
 
@@ -11,7 +11,7 @@ __Martianova, E., Pageau, A., Pausik, N., Doucet, T., Leblanc, D, Proulx, C.D.__
 Using functions from [___FiberPhotmetryDataAnalysis.ipynb___](./FiberPhotometryDataAnalysis.ipynb), you can create _FiberPhotometryRecording_ object containing your recordings and with one line of code calculate dF/F signal and create perievent arrays:
 
 ```python
-# Create dictionaries with your recordings and events
+# Create dictionaries with your recordings, events, measurements
 signals = {'Aneurons': signal_from_A, # The keys are names of neuronal populations, values are vectors of intensity.
            'Bneurons': signal_from_B} # You can add as many recordings as you have from the same animal.
 
@@ -31,7 +31,7 @@ measurements = {'measure1': 'time': measure1time,   # The measurements can be fo
                           
 # Create FiberPhotometryRecording object
 r = FiberPhotometryRecording(signals,references,time_,events,
-                             measurements,'mouseName','testName','trialNumber')
+                             measurements,'mouse1name','test1name','trialNumber')
                              
 # Calculate dF/F for all recordings
 r.getDFF()
@@ -47,8 +47,17 @@ r.Perievents['Aneurons']['event3']['offset']
 r.saveRecording('HDFname.h5') # In the same HDF file, you can save several recordings from different mice, tests, and trials
 ```
 
+The pipeline of processing of fiber photometry data is explained in our JoVE paper:
+__Martianova, E., Aronson, S., Proulx, C.D.__ [Multi-Fiber Photometry to Record Neural Activity in Freely Moving Animal.](https://www.jove.com/video/60278/multi-fiber-photometry-to-record-neural-activity-freely-moving). _J. Vis. Exp._ (152), e60278, doi: 10.3791/60278 (2019).
+An example can be found in our other [github repo](https://github.com/katemartian/Photometry_data_processing).
+
+Here is an example how the data processing can look like:
+
+If you set parameters plot and save True, the functions create a folder 'figures', which contains plots of the steps of the data processing.
+
+
 ## Analyzing data
-Using FiberPhotometryTest object, you can calculate average per mouse perievent trace across all trials
+Using FiberPhotometryTest object, you can calculate mean perievent traces per mouse.
 
 ```python
 # Create FiberPhotometryTest object
@@ -64,4 +73,46 @@ test.plotMeans('neuronsA','event1','onset')
 df = getDataFrameAUC('event1','onset',['before','after']) # The last argument sets names to AUC time frames
 # You can use this data frame to do statistical analysis
 ```
+
+You can also do correlation analysis between dF/F signal and measurement or dF/F signals of two neural populations. It can be total correlation across the whole recordings or at specific events. To plot the results across several tests, FiberPhotometryExperiment object can be used.
+
+```python
+# Total coorelation between dF/F and measure traces
+# Create FiberPhotometryTest objects corresponding to one of the tests saved in HDF file.
+test1 = FiberPhotometryTest('HDFname.h5','test1name')
+test2 = FiberPhotometryTest('HDFname.h5','test2name')
+# Calculate overall Pearson correlation between dF/F traces and measure1 traces.
+test1.getMeasureCorrelation('measure1')
+test2.getMeasureCorrelation('measure2')
+
+# Create FiberPhotometryExperiment object
+exp = FiberPhotometryExperiment('HDFname.h5')
+# Plot distribution of R values for neurons A and measure 1 in tests 1 and 2
+exp.plotRoverTests('Aneurons',measure='measure1',tests=['test1name','test2name']
+# Get data frame of R values
+df = exp.getDataFrameRmeasure('measure1',[test1name','test2name'])
+```
+
+```python
+# Total coorelation between dF/F traces of two neural populations
+# Create FiberPhotometryTest objects corresponding to one of the tests saved in HDF file.
+test1 = FiberPhotometryTest('HDFname.h5','test1name')
+test2 = FiberPhotometryTest('HDFname.h5','test2name')
+# Calculate overall Pearson correlation between dF/F traces of A and B neurons.
+test1.getOutputCorrelation('Aneurons','Bneurons')
+test2.getOutputCorrelation('aneurons','Bneurons')
+
+# Create FiberPhotometryExperiment object
+exp = FiberPhotometryExperiment('HDFname.h5')
+# Plot distribution of R values for neurons A and measure 1 in tests 1 and 2
+exp.plotRoverTests('Aneurons',output1='Bneurons',tests=['test1name','test2name'])
+# Get data frame of R values
+df = exp.getDataFrameRoutputs([test1name','test2name'])
+```
+
+Correlation analysis can be done at recorded events and in between them. For more information check our preprint.
+
+```python
+```
+
 
