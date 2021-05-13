@@ -47,6 +47,8 @@ r.Perievents['Aneurons']['event3']['offset']
 r.saveRecording('HDFname.h5') # In the same HDF file, you can save several recordings from different mice, tests, and trials
 ```
 
+![alt text](https://github.com/katemartian/LHoutputsManuscript/edit/master/class_recording.png?raw=true)
+
 The pipeline of processing of fiber photometry data is explained in our JoVE paper:
 __Martianova, E., Aronson, S., Proulx, C.D.__ [Multi-Fiber Photometry to Record Neural Activity in Freely Moving Animal.](https://www.jove.com/video/60278/multi-fiber-photometry-to-record-neural-activity-freely-moving). _J. Vis. Exp._ (152), e60278, doi: 10.3791/60278 (2019).
 An example can be found in our other [github repo](https://github.com/katemartian/Photometry_data_processing).
