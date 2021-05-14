@@ -10,7 +10,7 @@ __Martianova, E., Pageau, A., Pausik, N., Doucet, T., Leblanc, D, Proulx, C.D.__
 ## Processing data
 Using functions from [___FiberPhotmetryDataAnalysis.ipynb___](./FiberPhotometryDataAnalysis.ipynb), you can create _FiberPhotometryRecording_ object containing your recordings and with one line of code calculate dF/F signal and create perievent arrays:
 
-```python
+```pytho
 # Create dictionaries with your recordings, events, measurements
 signals = {'Aneurons': signal_from_A, # The keys are names of neuronal populations, values are vectors of intensity.
            'Bneurons': signal_from_B} # You can add as many recordings as you have from the same animal.
