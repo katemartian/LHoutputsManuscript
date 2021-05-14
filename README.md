@@ -47,7 +47,7 @@ r.Perievents['Aneurons']['event3']['offset']
 r.saveRecording('HDFname.h5') # In the same HDF file, you can save several recordings from different mice, tests, and trials
 ```
 
-<img src="examplePlots/FPrecording.png" width="100%" height="100%">
+<img src="examplePlots/FPrecording.png" width="90%" height="90%">
 
 If you set parameters plot and save to True, the functions create a folder 'figures', which contains plots of the steps of the data processing.
 
