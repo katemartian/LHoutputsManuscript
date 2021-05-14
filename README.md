@@ -133,7 +133,7 @@ exp = FiberPhotometryExperiment('HDFname.h5')
 df = exp.getDataFrameMeasureCorrCounts('measure1',['test1name','test2name'],['Aneurons','Bneurons'])
 ```
 
-<img src="examplePlots/FPperieventCorr.png" width="60%" height="60%">
+<img src="examplePlots/FPperieventCorr.png" width="60%" height="60%"> 
 
 From the results of the previous perievent correlation analysis, you can plot cross correaltion.
 
