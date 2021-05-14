@@ -47,7 +47,7 @@ r.Perievents['Aneurons']['event3']['offset']
 r.saveRecording('HDFname.h5') # In the same HDF file, you can save several recordings from different mice, tests, and trials
 ```
 
-![FPrecording](examplePlots/FPrecording.png)
+<img src="examplePlots/FPrecording.png" width="100%" height="100%">
 
 If you set parameters plot and save to True, the functions create a folder 'figures', which contains plots of the steps of the data processing.
 
@@ -74,7 +74,7 @@ df = getDataFrameAUC('event1','onset',['before','after']) # The last argument se
 # You can use this data frame to do statistical analysis
 ```
 
-![FPmean](examplePlots/FPmean.png)
+<img src="examplePlots/FPmean.png" width="100%" height="100%">
 
 You can also do correlation analysis between dF/F signal and measurement or dF/F signals of two neural populations. It can be total correlation across the whole recordings or at specific events. To plot the results across several tests, FiberPhotometryExperiment object can be used.
 
