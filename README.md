@@ -15,14 +15,14 @@ Using functions from [___FiberPhotmetryDataAnalysis.ipynb___](./FiberPhotometryD
 signals = {'Aneurons': signal_from_A, # The keys are names of neuronal populations, values are vectors of intensity.
            'Bneurons': signal_from_B} # You can add as many recordings as you have from the same animal.
 
-references = {'Aneurons': reference_from_A, # The keys have to match the one in the signals.
+references = {'Aneurons': reference_from_A, # The keys have to match the ones in the signals.
               'Bneurons': reference_from_B}
               
 time_ = yourTimeVector # All your recordings and time vectors have to be the same length.
 
 events = {'event1': event1array, # You can add as many events as you have. Each event is a 2D array,
           'event2': event2array, # with 2 columns if it has onset and offset (e.g. consumption, immobility bouts),
-          'event3': event3array} # with 1 column if it has only start (e.g. air puff, foot shock).
+          'event3': event3array} # with 1 column if it has only onset (e.g. air puff, foot shock).
           
 measurements = {'measure1': 'time': measure1time,   # The measurements can be for example speed or freezing score.
                           'values': measure1values} # The recording time of the measurements can be not the same as fiber photometry
