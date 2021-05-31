@@ -68,7 +68,7 @@ test.getMeans()
 # Or you can precise the frames for AUC (the default frames are -2s - -1s and +1s - +2s from an event)
 test.getMeans(auc_frames={'event1-onset': [[-2,-1],[0,2]],
                           'event2-onset': [[-2,-1],[-0.5,1],[2,4]],
-                         'event2-offset': [[-2, 0],[0, 2]]
+                         'event2-offset': [[-2, 0],[0, 2]],
                          'event3-offset': [[-3,-1],[-1,0],[0,1],[1,3]]})
 
 # Plot means for neurons A at onset of event 1
