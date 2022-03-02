@@ -8,7 +8,7 @@ __Martianova, E., Pageau, A., Pausik, N., Doucet, T., Leblanc, D, Proulx, C.D.__
 # How to use functions
 
 ## Processing data
-Using functions from [___FiberPhotmetryDataAnalysis.ipynb___](./FiberPhotometryDataAnalysis.ipynb), you can create _FiberPhotometryRecording_ object containing your recordings and with one line of code calculate dF/F signal and create perievent arrays:
+Using functions from [___FiberPhotmetryDataAnalysis.ipynb___](./FiberPhotometryDataAnalysis.ipynb), you can initialize _FiberPhotometryRecording_ object containing your recordings:
 
 ```python
 # Create dictionaries with your recordings, events, measurements
@@ -31,13 +31,19 @@ measurements = {'measure1': 'time': measure1time,   # The measurements can be fo
                           
 # Create FiberPhotometryRecording object
 r = FiberPhotometryRecording(signals,references,time_,events,
-                             measurements,'mouse1name','test1name','trialNumber')
-                             
+                             measurements,'mouse1name','test1name','trialNumber')                    
+```python
+
+After initializition, one can calculate dF/F signal:
+```python                             
 # Calculate dF/F for all recordings
 r.getDFF()
 # Get a dF/F trace from one neuronal population
 r.dFFs['Aneurons']
+```python 
 
+Then one can calculate average signal around events (perievents):
+```python 
 # Calculate perievent arrays for each neural population and each event
 r.getPerievents()
 # Get perievent array recorded from neurons A at the offset of event 3
