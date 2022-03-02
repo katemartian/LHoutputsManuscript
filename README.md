@@ -32,7 +32,7 @@ measurements = {'measure1': 'time': measure1time,   # The measurements can be fo
 # Create FiberPhotometryRecording object
 r = FiberPhotometryRecording(signals,references,time_,events,
                              measurements,'mouse1name','test1name','trialNumber')                    
-```python
+```
 
 After initializition, one can calculate dF/F signal:
 ```python                             
@@ -40,7 +40,7 @@ After initializition, one can calculate dF/F signal:
 r.getDFF()
 # Get a dF/F trace from one neuronal population
 r.dFFs['Aneurons']
-```python 
+``` 
 
 Then one can calculate average signal around events (perievents):
 ```python 
