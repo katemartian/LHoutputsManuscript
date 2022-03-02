@@ -20,7 +20,7 @@ references = {'Aneurons': reference_from_A, # The keys have to match the ones in
               
 time_ = yourTimeVector # All your recordings and time vectors have to be the same length.
 
-events = {'event1': event1array, # You can add as many events as you have. Each event is a 2D array,
+events = {'event1': event1array, # You can add as many events as you have. Each event is a 2D array of timestamps,
           'event2': event2array, # with 2 columns if it has onset and offset (e.g. consumption, immobility bouts),
           'event3': event3array} # with 1 column if it has only onset (e.g. air puff, foot shock).
           
