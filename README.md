@@ -160,3 +160,7 @@ df = test1.getDataFrameCrossCorr('measure1','event1','offset')
 The same analysis can be done between dF/F traces of two neural populations.
 
 This explanation covers all the functions that were used to analyze data for the preprint.
+
+
+# License
+This project is licensed under GNU GPLv3.
