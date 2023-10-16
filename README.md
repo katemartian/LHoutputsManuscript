@@ -81,7 +81,7 @@ test.getMeans(auc_frames={'event1-onset': [[-2,-1],[0,2]],
 test.plotMeans('neuronsA','event1','onset')
 
 # Get a data frame of AUCs for all neural populations at onset of event 1
-df = getDataFrameAUC('event1','onset',['before','after']) # The last argument sets names to AUC time frames
+df = test.getDataFrameAUC('event1','onset',['before','after']) # The last argument sets names to AUC time frames
 # You can use this data frame to do statistical analysis
 ```
 
