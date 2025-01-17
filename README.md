@@ -1,9 +1,9 @@
-# Coherent activity at three major lateral hypothalamic neural outputs controls the onset of motivated behavior responses
+# Hypothalamic neuronal outputs transmit sensorimotor signals at the onset of locomotor initiation
 
-This repository includes scripts and source data that were used in the following preprint: 
-__Martianova, E., Pageau, A., Pausik, N., Doucet, T., Leblanc, D, Proulx, C.D.__ [_Coherent activity at three major lateral hypothalamic neural outputs controls the onset of motivated behavior responses._](https://www.biorxiv.org/content/10.1101/2021.04.28.441785v1) bioRxiv, doi: 10.1101/2021.04.28.441785v1, 2021.
+This repository includes scripts and source data that were used in the following peer-reviewed publication: 
+__Martianova, E., Sadretdinova, R., Pageau, A., Pausik, N., Doucet, T., Leblanc, D., Marroquin Rivera, A., Labonté, B., Proulx, C.D__ [_Hypothalamic neuronal outputs transmit sensorimotor signals at the onset of locomotor initiation._](https://www.biorxiv.org/content/10.1101/2021.04.28.441785v1) iScience, doi: 10.1016/j.isci.2023.108328, 2023.
 
-[___FiberPhotmetryDataAnalysis.ipynb___](./FiberPhotometryDataAnalysis.ipynb) notebook includes functions necessary to process, analyze, and visualize fiber photometry data. Using these functions, jupyter notebooks in the [rawData](./rawData) folder show all the steps of analysis from raw data to the final [source data](./sourceData) and plots used in the figures of the preprint. The [sourceData](./sourceData) folder also includes jupyter notebooks showing stastical analysis done for the preprint.
+[___FiberPhotmetryDataAnalysis.ipynb___](./FiberPhotometryDataAnalysis.ipynb) notebook includes functions necessary to process, analyze, and visualize fiber photometry data. Using these functions, jupyter notebooks in the [rawData](./rawData) folder show all the steps of analysis from raw data to the final [source data](./sourceData) and plots used in the figures of the paper. The [sourceData](./sourceData) folder also includes jupyter notebooks showing stastical analysis.
 
 # How to use functions
 
@@ -63,7 +63,7 @@ An example can be found in our other [github repo](https://github.com/katemartia
 
 
 ## Analyzing data
-Using FiberPhotometryTest object, you can calculate mean perievent traces per mouse.
+Using FiberPhotometryTest object, you can calculate mean perievent traces per animal.
 
 ```python
 # Create FiberPhotometryTest object
