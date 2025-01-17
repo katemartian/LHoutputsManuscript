@@ -1,7 +1,5 @@
-# Hypothalamic neuronal outputs transmit sensorimotor signals at the onset of locomotor initiation
-
 This repository includes scripts and source data that were used in the following peer-reviewed publication: 
-__Martianova, E., Sadretdinova, R., Pageau, A., Pausik, N., Doucet, T., Leblanc, D., Marroquin Rivera, A., Labonté, B., Proulx, C.D__ [_Hypothalamic neuronal outputs transmit sensorimotor signals at the onset of locomotor initiation._](https://www.biorxiv.org/content/10.1101/2021.04.28.441785v1) iScience, doi: 10.1016/j.isci.2023.108328, 2023.
+__Martianova, E.__, Sadretdinova, R., Pageau, A., Pausik, N., Doucet, T., Leblanc, D., Marroquin Rivera, A., Labonté, B., Proulx, C.D _Hypothalamic neuronal outputs transmit sensorimotor signals at the onset of locomotor initiation_, iScience, 2023, doi: [10.1016/j.isci.2023.108328](https://doi.org/10.1016/j.isci.2023.108328).
 
 [___FiberPhotmetryDataAnalysis.ipynb___](./FiberPhotometryDataAnalysis.ipynb) notebook includes functions necessary to process, analyze, and visualize fiber photometry data. Using these functions, jupyter notebooks in the [rawData](./rawData) folder show all the steps of analysis from raw data to the final [source data](./sourceData) and plots used in the figures of the paper. The [sourceData](./sourceData) folder also includes jupyter notebooks showing stastical analysis.
 
@@ -58,7 +56,7 @@ r.saveRecording('HDFname.h5') # In the same HDF file, you can save several recor
 If you set parameters plot and save to True, the functions create a folder 'figures', which contains plots of the steps of the data processing.
 
 The pipeline of processing of fiber photometry data is explained in our JoVE paper:
-__Martianova, E., Aronson, S., Proulx, C.D.__ [Multi-Fiber Photometry to Record Neural Activity in Freely Moving Animal.](https://www.jove.com/video/60278/multi-fiber-photometry-to-record-neural-activity-freely-moving). _J. Vis. Exp._ (152), e60278, doi: 10.3791/60278 (2019).
+__Martianova, E.__, Aronson, S., Proulx, C.D. _Multi-Fiber Photometry to Record Neural Activity in Freely Moving Animal_, Jove, 2019, doi: [10.3791/60278](https://www.jove.com/video/60278/multi-fiber-photometry-to-record-neural-activity-freely-moving).
 An example can be found in our other [github repo](https://github.com/katemartian/Photometry_data_processing).
 
 
